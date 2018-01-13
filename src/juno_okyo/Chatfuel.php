@@ -157,7 +157,7 @@ class Chatfuel
       }
 
       if(!is_null($messengerExtensions) && is_array($messengerExtensions) && !empty($messengerExtensions)){
-        $button['messengerExtensions'] = true;
+        $button['messenger_extensions'] = true;
         
         $allowedHeights = array(self::WV_HEIGHT_RATIO_COMPACT, self::WV_HEIGHT_RATIO_TALL, self::WV_HEIGHT_RATIO_FULL);
         if(isset($messengerExtensions['webview_height_ratio']) && in_array($messengerExtensions['webview_height_ratio'], $allowedHeights)){
