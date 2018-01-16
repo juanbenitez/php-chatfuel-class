@@ -8,7 +8,7 @@ namespace juno_okyo;
 
 class Chatfuel
 {
-  const VERSION = '1.0.1';
+  const VERSION = '1.0.2';
 
   const WV_SHARE_BUTTON_HIDE    = 'hide';
   const WV_HEIGHT_RATIO_COMPACT = 'compact';
@@ -206,11 +206,13 @@ class Chatfuel
   public function createQuickReply($text, $quickReplies)
   {
     if (is_array($quickReplies)) {
-      $this->response['text'] = $text;
-      $this->response['quick_replies'] = $quickReplies;
-      return TRUE;
+      $this->response[] = array(
+                            'text' => $text,
+                            'quick_replies' => $quickReplies
+                          );
+    
+      return true;
     }
-
     return FALSE;
   }
 
@@ -221,9 +223,7 @@ class Chatfuel
 
     if (is_array($block)) {
       $button['block_names'] = $block;
-    } else {
-      $button['block_name'] = $block;
-    }
+    } 
 
     return $button;
   }

@@ -22,3 +22,10 @@ $chatfuel->sendTextCard('Hello world',
                               )
     )
 );
+
+//Returns a text card with quick reply button 
+$chatfuel->createQuickReply('Hello Chatfuel', 
+    array(
+         $chatfuel->createQuickReplyButton('test button1', array('block-name'))
+    )
+);
